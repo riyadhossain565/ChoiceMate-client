@@ -7,21 +7,21 @@ const LogIn = () => {
     e.preventDefault();
   };
   return (
-    <div>
-      <div className="hero bg-base-200 min-h-screen">
+    <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content flex-col lg:flex-row">
           <div className="text-center lg:text-left">
             <Lottie animationData={loginAnimation} loop={true} />
           </div>
           <div className="card bg-base-100 w-full max-w-md shrink-0 shadow-2xl">
-            <form className="card-body" onSubmit={handleSubmit}>
-              <h1 className="text-5xl font-bold">Login now!</h1>
+            <form className="card-body pb-3" onSubmit={handleSubmit}>
+              <h1 className="text-4xl font-bold">Login now!</h1>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email*</span>
                 </label>
                 <input
                   type="email"
+                  name="email"
                   placeholder="email"
                   className="input input-bordered"
                   required
@@ -33,6 +33,7 @@ const LogIn = () => {
                 </label>
                 <input
                   type="password"
+                  name="password"
                   placeholder="password"
                   className="input input-bordered"
                   required
@@ -86,10 +87,10 @@ const LogIn = () => {
               </span>
             </div>
             {/* Register btn */}
-            <div className="mb-4 text-center text-sm text-gray-600">
+            <div className="mb-4 text-center text-sm font-bold text-gray-600">
               <p>
                 Don't have an account?{" "}
-                <Link to="/register" className="text-blue-500 hover:underline">
+                <Link to="/register" className="text-[#ff7361] hover:underline">
                   Register
                 </Link>
               </p>
@@ -97,7 +98,6 @@ const LogIn = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
