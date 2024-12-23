@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { MdMenu } from "react-icons/md";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
+  const {user, logOut} = useContext(AuthContext)
+
+  const handleSignOut = () => {
+    logOut()
+  }
+
   const links = (
     <>
       <li>
@@ -50,7 +57,26 @@ const Navbar = () => {
           <ul className="menu-horizontal gap-2 text-white">{links}</ul>
         </div>
         <div className="navbar-end">
-          <Link to='/login' className="text-white bg-[#ff7361] px-4 py-2 rounded-lg hover:bg-transparent transition-all font-bold shadow-lg border-2 border-[#ff7361]">Log-in</Link>
+          {
+            user ? ( 
+              <>
+                <div>
+                <img
+                  className="w-10 h-10 rounded-full mr-2"
+                  title={user?.displayName}
+                  src={user?.photoURL}
+                  alt="User Profile Photo"
+                />
+                </div>
+                <button onClick={handleSignOut} className="text-white bg-[#ff7361] px-4 py-2 rounded-lg hover:bg-transparent transition-all font-bold shadow-lg border-2 border-[#ff7361]">
+                Sign Out
+              </button>
+              </>
+            ): (
+              <Link to='/login' className="text-white bg-[#ff7361] px-4 py-2 rounded-lg hover:bg-transparent transition-all font-bold shadow-lg border-2 border-[#ff7361]">Log-in</Link>
+            )
+          }
+         
         </div>
       </div>
     </div>

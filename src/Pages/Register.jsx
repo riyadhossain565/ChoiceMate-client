@@ -1,18 +1,57 @@
 import Lottie from "lottie-react";
 import registerAnim from "../assets/animation/register-animation.json";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Register = () => {
-  const handleSubmit = (e) => {
+  const navigate = useNavigate()
+  const { createUser, updateUserProfile, setUser, signInWithGoogle } = useContext(AuthContext);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const form = e.target;
+    const name = form.name.value;
+    const photo = form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    console.log({name, photo, email, password})
+
+    try {
+      // User Registration
+      const result = await createUser(email, password)
+      console.log(result)
+      await updateUserProfile(name, photo)
+      setUser({ ...result.user, photoURL: photo, displayName: name })
+      toast.success('Signup Successful')
+      navigate('/')
+    } catch (err) {
+      console.log(err)
+      toast.error(err?.message)
+    }
   };
+
+   // Google Signin
+   const handleGoogleSignIn = async () => {
+    try {
+      await signInWithGoogle()
+      toast.success('Signin Successful')
+      navigate('/')
+    } catch (err) {
+      console.log(err)
+      toast.error(err?.message)
+    }
+  }
   return (
     <div className="hero bg-base-200 min-h-screen py-6">
-      <div className="hero-content flex-col lg:flex-row">
+      <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <Lottie animationData={registerAnim} loop={true} />
         </div>
-        <div className="card bg-base-100 w-full max-w-md shrink-0 shadow-2xl">
+        <div className="card bg-base-100 w-full max-w-lg shrink-0 shadow-2xl">
           <form className="card-body pb-3" onSubmit={handleSubmit}>
             <h1 className="text-4xl font-bold">Register now!</h1>
             <div className="form-control">
@@ -65,7 +104,7 @@ const Register = () => {
             </div>
             <div className="form-control mt-6">
               <button className="btn text-white bg-[#ff7361] transition-all hover:bg-[#2f3239]">
-                Register
+                Sign Up
               </button>
             </div>
           </form>
@@ -77,7 +116,7 @@ const Register = () => {
 
           {/* google sign-in */}
           <div
-            // onClick={handleGoogleSignIn}
+            onClick={handleGoogleSignIn}
             className="flex cursor-pointer items-center justify-center w-5/6 mx-auto mb-4 text-gray-600 transition-colors duration-300 transform border rounded-lg hover:bg-gray-200"
           >
             <div className="px-4 py-2">
@@ -110,7 +149,7 @@ const Register = () => {
             <p>
               Already have an account?
               <Link to="/login" className="text-[#ff7361] hover:underline">
-                Login
+                Log-in
               </Link>
             </p>
           </div>
