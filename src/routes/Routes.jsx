@@ -3,6 +3,8 @@ import MainLayouts from "../layouts/MainLayouts";
 import Home from "../Pages/Home";
 import LogIn from "../Pages/LogIn";
 import Register from "../Pages/Register";
+import AddQueries from "../Pages/AddQueries";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,10 @@ const router = createBrowserRouter([
         {
             path: '/register',
             element: <Register />
+        },
+        {
+          path: '/add-queries',
+          element: <PrivateRoute> <AddQueries /></PrivateRoute>
         }
     ]
   },

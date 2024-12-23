@@ -4,11 +4,11 @@ import { MdMenu } from "react-icons/md";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
-  const {user, logOut} = useContext(AuthContext)
+  const { user, logOut } = useContext(AuthContext);
 
   const handleSignOut = () => {
-    logOut()
-  }
+    logOut();
+  };
 
   const links = (
     <>
@@ -16,7 +16,11 @@ const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive }) => `
-           px-4 py-2 transition-all ${isActive ? "font-bold bg-[#ff7361]" : "font-bold hover:bg-[#ff7361]"}
+           px-4 py-2 transition-all ${
+             isActive
+               ? "font-bold bg-[#ff7361]"
+               : "font-bold hover:bg-[#ff7361]"
+           }
           `}
         >
           Home
@@ -26,12 +30,32 @@ const Navbar = () => {
         <NavLink
           to="/queries"
           className={({ isActive }) => `
-           px-4 py-2 transition-all ${isActive ? "font-bold bg-[#ff7361]" : "font-bold hover:bg-[#ff7361]"}
+           px-4 py-2 transition-all ${
+             isActive
+               ? "font-bold bg-[#ff7361]"
+               : "font-bold hover:bg-[#ff7361]"
+           }
           `}
         >
           Queries
         </NavLink>
       </li>
+      {user && (
+        <li>
+          <NavLink
+            to="/add-queries"
+            className={({ isActive }) => `
+           px-4 py-2 transition-all ${
+             isActive
+               ? "font-bold bg-[#ff7361]"
+               : "font-bold hover:bg-[#ff7361]"
+           }
+          `}
+          >
+            Add Queries
+          </NavLink>
+        </li>
+      )}
     </>
   );
   return (
@@ -39,8 +63,12 @@ const Navbar = () => {
       <div className="navbar w-11/12 mx-auto px-6">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="text-2xl p-2 bg-white rounded-xl mr-2 lg:hidden">
-            <MdMenu />
+            <div
+              tabIndex={0}
+              role="button"
+              className="text-2xl p-2 bg-white rounded-xl mr-2 lg:hidden"
+            >
+              <MdMenu />
             </div>
             <ul
               tabIndex={0}
@@ -57,26 +85,31 @@ const Navbar = () => {
           <ul className="menu-horizontal gap-2 text-white">{links}</ul>
         </div>
         <div className="navbar-end">
-          {
-            user ? ( 
-              <>
-                <div>
+          {user ? (
+            <>
+              <div>
                 <img
                   className="w-10 h-10 rounded-full mr-2"
                   title={user?.displayName}
                   src={user?.photoURL}
                   alt="User Profile Photo"
                 />
-                </div>
-                <button onClick={handleSignOut} className="text-white bg-[#ff7361] px-4 py-2 rounded-lg hover:bg-transparent transition-all font-bold shadow-lg border-2 border-[#ff7361]">
+              </div>
+              <button
+                onClick={handleSignOut}
+                className="text-white bg-[#ff7361] px-4 py-2 rounded-lg hover:bg-transparent transition-all font-bold shadow-lg border-2 border-[#ff7361]"
+              >
                 Sign Out
               </button>
-              </>
-            ): (
-              <Link to='/login' className="text-white bg-[#ff7361] px-4 py-2 rounded-lg hover:bg-transparent transition-all font-bold shadow-lg border-2 border-[#ff7361]">Log-in</Link>
-            )
-          }
-         
+            </>
+          ) : (
+            <Link
+              to="/login"
+              className="text-white bg-[#ff7361] px-4 py-2 rounded-lg hover:bg-transparent transition-all font-bold shadow-lg border-2 border-[#ff7361]"
+            >
+              Log-in
+            </Link>
+          )}
         </div>
       </div>
     </div>
