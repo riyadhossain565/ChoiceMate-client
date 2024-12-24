@@ -43,7 +43,7 @@ const Navbar = () => {
       {user && (
         <li>
           <NavLink
-            to="/add-queries"
+            to="/my-queries"
             className={({ isActive }) => `
            px-4 py-2 transition-all ${
              isActive
@@ -52,7 +52,7 @@ const Navbar = () => {
            }
           `}
           >
-            Add Queries
+            My Queries
           </NavLink>
         </li>
       )}
@@ -97,7 +97,8 @@ const Navbar = () => {
               </div>
               <button
                 onClick={handleSignOut}
-                className="text-white bg-[#ff7361] px-4 py-2 rounded-lg hover:bg-transparent transition-all font-bold shadow-lg border-2 border-[#ff7361]"
+                className="text-white bg-[#ff7361] px-4 py-2 rounded-lg hover:bg-transparent transition-all font-bold shadow-lg 
+                border border-[#ff7361]"
               >
                 Sign Out
               </button>
@@ -105,7 +106,7 @@ const Navbar = () => {
           ) : (
             <Link
               to="/login"
-              className="text-white bg-[#ff7361] px-4 py-2 rounded-lg hover:bg-transparent transition-all font-bold shadow-lg border-2 border-[#ff7361]"
+              className="text-white bg-[#ff7361] px-4 py-2 rounded-lg hover:bg-transparent transition-all font-bold shadow-lg border border-[#ff7361]"
             >
               Log-in
             </Link>
