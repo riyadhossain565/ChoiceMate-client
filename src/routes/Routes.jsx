@@ -39,7 +39,7 @@ const router = createBrowserRouter([
           element: <Queries />
         },
         {
-          path: '/query-details',
+          path: '/query/:id',
           element: <QueryDetails />
         }
     ]

@@ -4,6 +4,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
 import MyQuery from "../components/Myquery";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const MyQueries = () => {
   const { user } = useContext(AuthContext);
@@ -25,8 +26,8 @@ const MyQueries = () => {
   const handleDelete = async (id) => {
     try {
       const { data } = await axios.delete(`http://localhost:5000/query/${id}`);
-      console.log(data);
       fetchAllQuery();
+      toast.success("Delete successfully")
     } catch (err) {
       console.log(err);
     }

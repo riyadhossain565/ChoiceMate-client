@@ -22,7 +22,7 @@ const AddQueries = () => {
       productImage,
       queryTitle,
       avoidReason,
-      user: {
+      queryCreator: {
         email: user?.email,
         name: user?.displayName,
         photo: user?.photoURL,

@@ -43,6 +43,22 @@ const Navbar = () => {
       {user && (
         <li>
           <NavLink
+            to="/recommendations-for-me"
+            className={({ isActive }) => `
+           px-4 py-2 transition-all ${
+             isActive
+               ? "font-bold bg-[#ff7361]"
+               : "font-bold hover:bg-[#ff7361]"
+           }
+          `}
+          >
+            Recommendations For Me
+          </NavLink>
+        </li>
+      )}
+      {user && (
+        <li>
+          <NavLink
             to="/my-queries"
             className={({ isActive }) => `
            px-4 py-2 transition-all ${
@@ -53,6 +69,22 @@ const Navbar = () => {
           `}
           >
             My Queries
+          </NavLink>
+        </li>
+      )}
+      {user && (
+        <li>
+          <NavLink
+            to="/my-recommendations"
+            className={({ isActive }) => `
+           px-4 py-2 transition-all ${
+             isActive
+               ? "font-bold bg-[#ff7361]"
+               : "font-bold hover:bg-[#ff7361]"
+           }
+          `}
+          >
+            My recommendations
           </NavLink>
         </li>
       )}
@@ -100,7 +132,7 @@ const Navbar = () => {
                 className="text-white bg-[#ff7361] px-4 py-2 rounded-lg hover:bg-transparent transition-all font-bold shadow-lg 
                 border border-[#ff7361]"
               >
-                Sign Out
+                Log-out
               </button>
             </>
           ) : (

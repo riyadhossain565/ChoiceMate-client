@@ -6,7 +6,7 @@ const MyQuery = ({ query, handleDelete }) => {
   return (
     <div className="card card-compact bg-base-100 w-80 shadow-xl hover:scale-[1.05] transition-all">
       <figure>
-        <img src={productImage} alt="Product Image" />
+        <img className="h-52 w-full" src={productImage} alt="Product Image" />
       </figure>
       <div className="flex flex-col gap-1 items-center text-center">
         <h2 className="text-xl font-semibold my-2">{productName}</h2>
