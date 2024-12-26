@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const MyQuery = ({ query, handleDelete }) => {
   const {_id, productName, productBrand, productImage, queryTitle, avoidReason } =
     query || {};
@@ -20,7 +22,7 @@ const MyQuery = ({ query, handleDelete }) => {
           <strong>Reason:</strong> {avoidReason.substring(0, 70)}...
         </p>
         <div className="card-actions justify-center my-2">
-          <button className="btn btn-primary">view details</button>
+          <Link to={`/query/${_id}`} className="btn btn-primary">view details</Link>
           <button className="btn btn-primary">update</button>
           <button 
           onClick={()=> handleDelete(_id)} 

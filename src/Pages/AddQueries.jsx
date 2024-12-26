@@ -2,8 +2,10 @@ import React, { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const AddQueries = () => {
+  const navigate = useNavigate();
   const { user } = useContext(AuthContext);
 
   const handleSubmit = async (e) => {
@@ -40,7 +42,7 @@ const AddQueries = () => {
       form.reset()
       // 3. show toast 
       toast.success("Query Added Successfully")
-      console.log("added")
+      navigate('/my-queries')
     }catch(err){
       console.log(err)
       toast.error(err.message)

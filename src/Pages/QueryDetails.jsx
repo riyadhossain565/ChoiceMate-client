@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
 import { format } from "date-fns";
 
 const QueryDetails = () => {
+  const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   const [queries, setQueries] = useState([]);
   const { id } = useParams();
@@ -44,6 +45,11 @@ const QueryDetails = () => {
     const recommendationReason = form.recommendationReason.value;
     const queryId = _id;
 
+      // 0. Check bid permissions validation
+      if (user?.email === queryCreator?.email)
+        return toast.error("Action not premitted!");
+  
+
     const recommendData = {
       recommendationTitle,
       recommendedName,
@@ -56,7 +62,7 @@ const QueryDetails = () => {
         email: queryCreator?.email,
         name: queryCreator?.name,
       },
-      Recommender: {
+      recommender: {
         email: user?.email,
         name: user?.displayName,
       },
@@ -72,8 +78,7 @@ const QueryDetails = () => {
       form.reset();
       // 3. show toast
       toast.success("Recommendation Added Successfully");
-      console.log("added");
-      // Refetch recommendations to update the list
+      // 4. Refetch recommendations to update the list
       fetchRecommendations(queryId);
     } catch (err) {
       console.log(err);
