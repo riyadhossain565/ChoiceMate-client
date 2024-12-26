@@ -33,6 +33,35 @@ const MyQueries = () => {
     }
   };
 
+  const mordernDelete = (id) => {
+    toast((t) => (
+      <div className="flex gap-3 items-center">
+        <div>
+          <p>
+            Are you <b>Sure?</b>
+          </p>
+        </div>
+        <div>
+          <button
+            className="bg-red-400 text-white px-3 py-1 rounded-lg"
+            onClick={() => {
+              handleDelete(id);
+              toast.dismiss(t.id);
+            }}
+          >
+            Yes
+          </button>
+          <button
+            className="bg-green-400 text-white px-3 py-1 ml-2 rounded-lg"
+            onClick={() => toast.dismiss(t.id)}
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    ));
+  };
+
   return (
     <div className="bg-base-200">
       {/* Banner */}
@@ -66,7 +95,7 @@ const MyQueries = () => {
                 <MyQuery
                   key={query._id}
                   query={query}
-                  handleDelete={handleDelete}
+                  mordernDelete={mordernDelete}
                 ></MyQuery>
               ))}
           </div>

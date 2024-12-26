@@ -1,10 +1,17 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import UpdateQueries from "../Pages/UpdateQueries";
 
-const MyQuery = ({ query, handleDelete }) => {
-  const {_id, productName, productBrand, productImage, queryTitle, avoidReason } =
-    query || {};
+const MyQuery = ({ query, mordernDelete }) => {
+  const {
+    _id,
+    productName,
+    productBrand,
+    productImage,
+    queryTitle,
+    avoidReason,
+  } = query || {};
 
-    
   return (
     <div className="card card-compact bg-base-100 w-80 shadow-xl hover:scale-[1.05] transition-all">
       <figure>
@@ -21,12 +28,23 @@ const MyQuery = ({ query, handleDelete }) => {
         <p className="text-gray-600">
           <strong>Reason:</strong> {avoidReason.substring(0, 70)}...
         </p>
-        <div className="card-actions justify-center my-2">
-          <Link to={`/query/${_id}`} className="btn btn-primary">view details</Link>
-          <button className="btn btn-primary">update</button>
-          <button 
-          onClick={()=> handleDelete(_id)} 
-          className="btn btn-primary">delete</button>
+        <div className="card-actions justify-center my-4">
+          <Link
+            to={`/query/${_id}`}
+           className=" bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-all font-bold shadow-lg"
+          >
+            view details
+          </Link>
+
+          <Link to={`/update-query/${_id}`}className=" bg-yellow-500 text-white px-4 py-2 rounded shadow hover:shadow-lg hover:bg-yellow-600">
+            Update
+          </Link>
+          <button
+            onClick={() => mordernDelete(_id)}
+            className=" bg-red-500 text-white px-4 py-2 rounded shadow hover:shadow-lg hover:bg-red-600"
+          >
+            delete
+          </button>
         </div>
       </div>
     </div>
