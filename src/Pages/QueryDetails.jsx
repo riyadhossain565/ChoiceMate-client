@@ -80,6 +80,7 @@ const QueryDetails = () => {
       toast.success("Recommendation Added Successfully");
       // 4. Refetch recommendations to update the list
       fetchRecommendations(queryId);
+      navigate('/my-recommendations')
     } catch (err) {
       console.log(err);
       toast.error(err.message);
