@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import UpdateQueries from "../Pages/UpdateQueries";
 
 const MyQuery = ({ query, mordernDelete }) => {
   const {
