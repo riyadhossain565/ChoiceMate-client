@@ -93,7 +93,7 @@ const Navbar = () => {
   );
   return (
     <div className="bg-[#2f3239]">
-      <div className="navbar w-10/12 mx-auto ">
+      <div className="navbar md:w-10/12 mx-auto ">
         <div className="navbar-start">
           <div className="dropdown">
             <div
@@ -110,7 +110,7 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <Link to="/" className="text-2xl text-white flex items-center">
+          <Link to="/" className="text-2xl text-white flex ite">
             <img className="w-12" src={logo} alt="logo" />
             <span>ChoiceMate</span>
           </Link>
