@@ -1,6 +1,6 @@
 import Lottie from "lottie-react";
 import loginAnimation from "../assets/animation/login-animation.json";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
@@ -8,6 +8,8 @@ import axios from "axios";
 
 const LogIn = () => {
   const navigate = useNavigate();
+  const location = useLocation()
+  const from = location?.state || '/'
   const { signInUser, signInWithGoogle } = useContext(AuthContext);
 
   // email password signin
@@ -21,7 +23,7 @@ const LogIn = () => {
     try {
       await signInUser(email, password);
       toast.success("SignIn successfull");
-      navigate("/");
+      navigate(from, { replace: true })
     } catch (err) {
       console.log(err);
       toast.error(err?.message);
@@ -34,7 +36,7 @@ const LogIn = () => {
       await signInWithGoogle();
 
       toast.success("SignIn Successfull");
-      navigate("/");
+      navigate(from, { replace: true })
     } catch (err) {
       console.log(err);
       toast.error(err?.message);
