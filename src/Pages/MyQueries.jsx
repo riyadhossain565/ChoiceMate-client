@@ -1,10 +1,10 @@
-import { useContext, useEffect, useState } from "react";
-import Banner from "../components/Banner";
-import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
-import MyQuery from "../components/Myquery";
-import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
+import Banner from "../components/Banner";
+import MyQuery from "../components/Myquery";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const MyQueries = () => {
   const { user } = useContext(AuthContext);
@@ -16,7 +16,8 @@ const MyQueries = () => {
 
   const fetchAllQuery = async () => {
     const { data } = await axios.get(
-      `http://localhost:5000/queries/${user?.email}`
+      `https://choice-mate-server.vercel.app/queries/${user?.email}`,
+      { withCredentials: true }
     );
     setQueries(data);
     // console.log(data);
@@ -25,9 +26,12 @@ const MyQueries = () => {
   // Delete Functionality
   const handleDelete = async (id) => {
     try {
-      const { data } = await axios.delete(`http://localhost:5000/query/${id}`);
+      const { data } = await axios.delete(
+        `https://choice-mate-server.vercel.app/query/${id}`,
+        { withCredentials: true }
+      );
       fetchAllQuery();
-      toast.success("Delete successfully")
+      toast.success("Delete successfully");
     } catch (err) {
       console.log(err);
     }

@@ -1,7 +1,7 @@
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
 import { format } from "date-fns";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const RecommendationsForMe = () => {
   const { user } = useContext(AuthContext);
@@ -13,7 +13,8 @@ const RecommendationsForMe = () => {
 
   const fetchAllRecommendation = async () => {
     const { data } = await axios.get(
-      `http://localhost:5000/recommendations/${user?.email}?queryCreator=true`
+      `https://choice-mate-server.vercel.app/recommendations/${user?.email}?queryCreator=true`,
+      { withCredentials: true } 
     );
     setRecommendations(data);
     console.log(data);

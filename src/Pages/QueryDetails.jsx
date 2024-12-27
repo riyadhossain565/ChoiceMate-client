@@ -1,9 +1,9 @@
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
-import toast from "react-hot-toast";
 import { format } from "date-fns";
+import { useContext, useEffect, useState } from "react";
+import toast from "react-hot-toast";
+import { useNavigate, useParams } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const QueryDetails = () => {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ const QueryDetails = () => {
   }, [id]);
 
   const fetchAllQuery = async () => {
-    const { data } = await axios.get(`http://localhost:5000/query/${id}`);
+    const { data } = await axios.get(`https://choice-mate-server.vercel.app/query/${id}`);
     setQueries(data);
     // console.log(data);
   };
@@ -73,7 +73,7 @@ const QueryDetails = () => {
 
     try {
       // 1. make a post request
-      await axios.post("http://localhost:5000/add-recommend", recommendData);
+      await axios.post("https://choice-mate-server.vercel.app/add-recommend", recommendData);
       // 2. reset form
       form.reset();
       // 3. show toast
@@ -89,7 +89,7 @@ const QueryDetails = () => {
 
   const fetchRecommendations = async (queryId) => {
     const { data } = await axios.get(
-      `http://localhost:5000/recommendtion/${queryId}`
+      `https://choice-mate-server.vercel.app/recommendtion/${queryId}`
     );
     setRecommendationsList(data);
     console.log(data);

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
 import RecentQueriesCard from "./RecentQueriesCard";
 
 const RecentQueries = () => {
@@ -10,7 +10,7 @@ const RecentQueries = () => {
   }, []);
 
   const fetchAllQuery = async () => {
-    const { data } = await axios.get(`http://localhost:5000/queries/home`);
+    const { data } = await axios.get(`https://choice-mate-server.vercel.app/queries/home`);
     setQueries(data);
     // console.log(data);
   };

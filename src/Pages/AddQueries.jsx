@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
+import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const AddQueries = () => {
   const navigate = useNavigate();
@@ -37,7 +37,7 @@ const AddQueries = () => {
 
     try {
       // 1. make a post request
-      await axios.post('http://localhost:5000/add-query', formData)
+      await axios.post('https://choice-mate-server.vercel.app/add-query', formData)
       // 2. reset form
       form.reset()
       // 3. show toast 

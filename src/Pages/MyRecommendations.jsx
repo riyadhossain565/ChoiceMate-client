@@ -1,8 +1,8 @@
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
-import MyRecommendsTable from "../components/MyRecommendsTable";
+import { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import MyRecommendsTable from "../components/MyRecommendsTable";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const MyRecommendations = () => {
   const { user } = useContext(AuthContext);
@@ -14,7 +14,8 @@ const MyRecommendations = () => {
 
   const fetchAllRecommendation = async () => {
     const { data } = await axios.get(
-      `http://localhost:5000/recommendations/${user?.email}`
+      `https://choice-mate-server.vercel.app/recommendations/${user?.email}`,
+      { withCredentials: true }
     );
     setRecommendations(data);
   };
@@ -23,7 +24,7 @@ const MyRecommendations = () => {
   const handleDelete = async (id) => {
     try {
       const { data } = await axios.delete(
-        `http://localhost:5000/recommendations/${id}`
+        `https://choice-mate-server.vercel.app/recommendations/${id}`
       );
       fetchAllRecommendation();
       toast.success("Delete successfully");

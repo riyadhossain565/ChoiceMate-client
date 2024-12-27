@@ -1,16 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo/logo.png";
 
 const Footer = () => {
   return (
     <footer className="bg-[#2f3239]">
-        <h1 className="text-3xl text-white text-center font-bold pt-6">ChoiceMate</h1>
-        <p className="text-center text-white py-2">Smart Picks for Smarter Shopping</p>
+      <h1 className="text-3xl text-white text-center font-bold pt-6 flex items-center justify-center">
+        <img className="w-12" src={logo} alt="logo" />
+        <span>ChoiceMate</span>
+      </h1>
+      <p className="text-center text-white py-2">
+        Smart Picks for Smarter Shopping
+      </p>
       <div className="footer lg:gap-96 w-5/6 mx-auto text-white p-8">
         <nav>
           <h6 className="footer-title">Services</h6>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
+          <a className="link link-hover">Query</a>
+          <a className="link link-hover">Recommendations</a>
           <a className="link link-hover">Marketing</a>
           <a className="link link-hover">Advertisement</a>
         </nav>
@@ -63,7 +69,8 @@ const Footer = () => {
       <div className="footer footer-center bg-[#353940] text-white p-4 border-t ">
         <aside>
           <p>
-            Copyright © {new Date().getFullYear()} - All right reserved by ChoiceMate
+            Copyright © {new Date().getFullYear()} - All right reserved by
+            ChoiceMate
           </p>
         </aside>
       </div>

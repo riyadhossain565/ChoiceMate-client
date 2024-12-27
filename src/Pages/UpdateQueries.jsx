@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
+import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { useNavigate, useParams } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const UpdateQueries = () => {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const UpdateQueries = () => {
   }, [id]);
 
   const fetchAllQuery = async () => {
-    const { data } = await axios.get(`http://localhost:5000/query/${id}`);
+    const { data } = await axios.get(`https://choice-mate-server.vercel.app/query/${id}`);
     setQuery(data);
   };
 
@@ -46,7 +46,7 @@ const UpdateQueries = () => {
 
     try {
       // 1. make a post request
-      await axios.put(`http://localhost:5000/update-query/${id}`, formData);
+      await axios.put(`https://choice-mate-server.vercel.app/update-query/${id}`, formData);
       // 2. reset form
       form.reset();
       // 3. show toast

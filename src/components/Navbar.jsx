@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { MdMenu } from "react-icons/md";
 import { AuthContext } from "../Provider/AuthProvider";
+import logo from "../assets/logo/logo.png"
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -109,8 +110,9 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <Link to="/" className="text-2xl text-white">
-            ChoiceMate
+          <Link to="/" className="text-2xl text-white flex items-center">
+            <img className="w-12" src={logo} alt="logo" />
+            <span>ChoiceMate</span>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">

@@ -11,11 +11,13 @@ import QueryDetails from "../Pages/QueryDetails";
 import MyRecommendations from "../Pages/MyRecommendations";
 import RecommendationsForMe from "../Pages/RecommendationsForMe";
 import UpdateQueries from "../Pages/UpdateQueries";
+import ErrorPage from "../Pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayouts />,
+    errorElement: <ErrorPage />,
     children: [
         {
             path:'/',
@@ -43,7 +45,7 @@ const router = createBrowserRouter([
         },
         {
           path: '/query/:id',
-          element: <QueryDetails />
+          element: <PrivateRoute><QueryDetails /></PrivateRoute>
         },
         {
           path: '/update-query/:id',
