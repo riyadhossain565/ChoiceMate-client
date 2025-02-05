@@ -1,5 +1,6 @@
 # Client Side - ChoiceMate
-live-link("https://choice-mate.web.app/")
+
+🔗 **Live Demo:** [ChoiceMate](https://choice-mate.web.app/)  
 
 This is the frontend application for the ChoiceMate platform, built using React. It provides users with an interface to view, search, and interact with queries and recommendations.
 
@@ -45,6 +46,50 @@ This is the frontend application for the ChoiceMate platform, built using React.
 ## API Integration
 
 The client interacts with the backend server to fetch and manipulate data.
+
+---
+
+## **🚀 How to Run the Project Locally**  
+
+### **Prerequisites**  
+Ensure you have the following installed on your system:  
+- **Node.js** (Latest LTS version recommended)  
+- **npm** or **yarn** (Package manager)  
+
+### **Step-by-Step Guide**  
+
+1️⃣ **Clone the Repository:**  
+```sh
+git clone https://github.com/your-github-username/quicksend-frontend.git
+```
+2️⃣ **Navigate to the Project Directory:**  
+```sh
+cd quicksend-frontend
+```
+3️⃣ **Install Dependencies:**  
+```sh
+npm install
+```
+or  
+```sh
+yarn install
+```
+4️⃣ **Create a `.env` File (If Required)**  
+If your project uses environment variables, create a `.env` file and add required API keys. Example:  
+```env
+REACT_APP_API_BASE_URL=https://your-api-url.com
+```
+5️⃣ **Start the Development Server:**  
+```sh
+npm start
+```
+or  
+```sh
+yarn start
+```
+6️⃣ **Open in Browser:**  
+After running the command, open **[http://localhost:3000](http://localhost:3000)** in your browser to see the app in action!  
+
 
 ## License
 
