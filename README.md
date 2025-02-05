@@ -60,11 +60,11 @@ Ensure you have the following installed on your system:
 
 1️⃣ **Clone the Repository:**  
 ```sh
-git clone https://github.com/your-github-username/quicksend-frontend.git
+git clone https://github.com/riyadhossain565/ChoiceMate-client.git
 ```
 2️⃣ **Navigate to the Project Directory:**  
 ```sh
-cd quicksend-frontend
+cd ChoiceMate-client
 ```
 3️⃣ **Install Dependencies:**  
 ```sh
