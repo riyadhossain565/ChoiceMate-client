@@ -20,7 +20,7 @@ const RecommendationsForMe = () => {
     console.log(data);
   };
   return (
-    <div className="w-10/12 mx-auto py-12">
+    <div className="w-10/12 mx-auto py-20">
       <div className="overflow-x-auto">
         <h1 className="text-3xl font-bold text-center mb-6">
           Recommendations For Me

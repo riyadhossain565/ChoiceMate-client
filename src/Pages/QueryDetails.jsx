@@ -97,7 +97,7 @@ const QueryDetails = () => {
 
   return (
     <div className="bg-base-200 min-h-screen py-10">
-      <div className="w-10/12 mx-auto">
+      <div className="w-10/12 mx-auto py-16">
         {/* Header */}
         <div className="text-center mb-10">
           <h1 className="text-4xl font-extrabold text-gray-800 mb-2">

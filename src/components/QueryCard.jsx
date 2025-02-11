@@ -14,7 +14,7 @@ const QueryCard = ({ query }) => {
   return (
     <div className="card bg-base-100 shadow-md p-4 border rounded-md">
       <figure>
-        <img src={productImage} alt="Product Image" className=" w-full" />
+        <img src={productImage} alt="Product Image" className="h-52 w-full" />
       </figure>
       <div className="flex flex-col items-center">
         <h2 className="text-xl font-semibold my-2">{productName}</h2>

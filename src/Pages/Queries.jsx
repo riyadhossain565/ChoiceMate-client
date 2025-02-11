@@ -25,7 +25,7 @@ const Queries = () => {
   };
 
   return (
-    <div className="w-10/12 mx-auto py-8">
+    <div className="w-10/12 mx-auto py-24">
       <h1 className="text-3xl font-bold text-center mb-6">All Queries</h1>
       <h2 className="text-2xl font-bold text-center mb-6">
         Explore Better Options

@@ -71,7 +71,7 @@ const MyQueries = () => {
       {/* Banner */}
       <Banner />
       {/* My Queries */}
-      <div className="w-11/12 mx-auto px-6 py-10">
+      <div className="w-10/12 mx-auto py-10">
         {/* Heading */}
         <h1 className="text-4xl font-bold text-center mb-6">My Queries</h1>
 
@@ -92,7 +92,7 @@ const MyQueries = () => {
           </div>
         ) : (
           // display queries
-          <div className="w-5/6 mx-auto py-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className=" mx-auto py-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {queries
               .sort((a, b) => new Date(b.dateCreated) - new Date(a.dateCreated)) // Descending order
               .map((query) => (

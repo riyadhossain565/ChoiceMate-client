@@ -4,7 +4,7 @@ const Banner = () => {
   return (
     <div className="w-full h-[350px] flex flex-col items-center justify-center bg-[#ff7361] text-white">
       {/* Heading and Button */}
-      <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
+      <h1 className="text-4xl md:text-6xl font-extrabold mb-6 pt-10">
         Manage Your <span className="text-[#2f3239]">Queries</span>
       </h1>
       <p className="text-lg md:text-xl mb-8 font-medium">

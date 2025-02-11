@@ -26,6 +26,7 @@ const RecentQueriesCard = ({query}) => {
       <p className="text-sm text-gray-600 mb-3">
        <strong>Reason: </strong> {avoidReason.substring(0, 70)}...
       </p>
+      <button className='w-full bg-[#ff7361] py-2 hover:bg-[#2f3239] hover:text-white transition-all rounded-md'>See More</button>
       </div>
     </div>
     );
