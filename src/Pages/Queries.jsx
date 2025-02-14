@@ -60,7 +60,7 @@ const Queries = () => {
         >
           <MdGrid4X4 className="w-6 h-6" />
         </button>
-        <button
+        {/* <button
           className={`btn ${
             gridColumns === 2 ? "btn bg-[#ff7361]" : "btn-outline"
           }`}
@@ -68,7 +68,7 @@ const Queries = () => {
           title="column-2"
         >
           <CiGrid2V className="w-6 h-6" />
-        </button>
+        </button> */}
         <button
           className={`btn ${
             gridColumns === 3 ? "btn bg-[#ff7361]" : "btn-outline"
@@ -84,8 +84,6 @@ const Queries = () => {
       <div className={`grid gap-6 ${
             gridColumns === 4
               ? "grid-cols-1 md:grid-cols-4"
-              : gridColumns === 2
-              ? "grid-cols-1 md:grid-cols-2"
               : "grid-cols-1 md:grid-cols-3"
           }`}>
         {queries

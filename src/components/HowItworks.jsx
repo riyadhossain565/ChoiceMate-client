@@ -12,7 +12,7 @@ const HowItworks = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Step 1 */}
           <div className="flex flex-col items-center text-center">
-            <div className="bg-primary text-white w-16 h-16 flex items-center justify-center rounded-full text-2xl font-bold mb-4">
+            <div className="bg-[#ff7361] text-white w-16 h-16 flex items-center justify-center rounded-full text-2xl font-bold mb-4">
               1
             </div>
             <h3 className="text-xl font-bold text-gray-700 mb-2">
@@ -26,7 +26,7 @@ const HowItworks = () => {
 
           {/* Step 2 */}
           <div className="flex flex-col items-center text-center">
-            <div className="bg-primary text-white w-16 h-16 flex items-center justify-center rounded-full text-2xl font-bold mb-4">
+            <div className="bg-[#ff7361] text-white w-16 h-16 flex items-center justify-center rounded-full text-2xl font-bold mb-4">
               2
             </div>
             <h3 className="text-xl font-bold text-gray-700 mb-2">
@@ -40,7 +40,7 @@ const HowItworks = () => {
 
           {/* Step 3 */}
           <div className="flex flex-col items-center text-center">
-            <div className="bg-primary text-white w-16 h-16 flex items-center justify-center rounded-full text-2xl font-bold mb-4">
+            <div className="bg-[#ff7361] text-white w-16 h-16 flex items-center justify-center rounded-full text-2xl font-bold mb-4">
               3
             </div>
             <h3 className="text-xl font-bold text-gray-700 mb-2">
