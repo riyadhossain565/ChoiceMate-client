@@ -7,7 +7,6 @@ const QueryCard = ({ query }) => {
     productName,
     productBrand,
     productImage,
-    queryTitle,
     dateCreated,
     recommendationCount,
   } = query || {};

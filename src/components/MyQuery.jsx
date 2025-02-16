@@ -11,7 +11,7 @@ const MyQuery = ({ query, mordernDelete }) => {
   } = query || {};
 
   return (
-    <div className="card card-compact bg-base-100 shadow-xl hover:scale-[1.05] transition-all">
+    <div className="card rounded-md card-compact bg-base-100 shadow-xl hover:scale-[1.05] transition-all">
       <figure>
         <img className="h-52 w-full" src={productImage} alt="Product Image" />
       </figure>

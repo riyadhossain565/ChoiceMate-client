@@ -23,6 +23,8 @@ const MyQueries = () => {
     // console.log(data);
   };
 
+  
+
   // Delete Functionality
   const handleDelete = async (id) => {
     try {

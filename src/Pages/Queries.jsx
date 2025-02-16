@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { CiGrid2V } from "react-icons/ci";
 import { LuGrid2X2X } from "react-icons/lu";
 import { MdGrid4X4 } from "react-icons/md";
 import QueryCard from "../components/QueryCard";
