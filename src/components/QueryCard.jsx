@@ -18,11 +18,11 @@ const QueryCard = ({ query }) => {
       </figure>
       <div className="flex flex-col items-center">
         <h2 className="text-xl font-semibold my-2">{productName}</h2>
-        <p className="text-sm text-gray-600 mb-1">Brand: {productBrand}</p>
-        <p className="text-sm text-gray-600 mb-3">
+        <p className="text-sm mb-1">Brand: {productBrand}</p>
+        <p className="text-sm mb-3">
           Query-Date: {format(new Date(dateCreated), "P")}
         </p>
-        <p className="font-bold text-gray-800 mb-3">
+        <p className="font-bold mb-3">
           Recommendations: {recommendationCount}
         </p>
         <Link

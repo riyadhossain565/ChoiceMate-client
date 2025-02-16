@@ -100,10 +100,10 @@ const QueryDetails = () => {
       <div className="w-10/12 mx-auto py-16">
         {/* Header */}
         <div className="text-center mb-10">
-          <h1 className="text-4xl font-extrabold text-gray-800 mb-2">
+          <h1 className="text-4xl font-extrabold mb-2">
             Query Details
           </h1>
-          <p className="text-gray-600 text-lg">
+          <p className="text-lg">
             View all the details of the selected query and add your
             recommendations.
           </p>
@@ -136,7 +136,7 @@ const QueryDetails = () => {
             <h2 className="text-2xl font-bold text-gray-800 mb-4">
               Query Information
             </h2>
-            <div className="space-y-3">
+            <div className="space-y-3 text-gray-800">
               <p>
                 <strong>Query Title:</strong> {queryTitle}
               </p>
@@ -178,7 +178,7 @@ const QueryDetails = () => {
                 type="text"
                 name="recommendationTitle"
                 placeholder="Enter recommendation title"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full bg-white focus:outline-[#ff7361]"
                 required
               />
             </div>
@@ -191,7 +191,7 @@ const QueryDetails = () => {
                 type="text"
                 name="recommendedName"
                 placeholder="Enter product name"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full bg-white focus:outline-[#ff7361]"
                 required
               />
             </div>
@@ -204,7 +204,7 @@ const QueryDetails = () => {
                 type="text"
                 name="recommendedImgUrl"
                 placeholder="Paste the image URL here"
-                className="input input-bordered w-full"
+                className="input input-bordered w-full bg-white focus:outline-[#ff7361]"
                 required
               />
             </div>
@@ -216,13 +216,13 @@ const QueryDetails = () => {
               <textarea
                 name="recommendationReason"
                 placeholder="Explain why you recommend this product..."
-                className="textarea textarea-bordered w-full h-24"
+                className="textarea textarea-bordered w-full h-24 bg-white focus:outline-[#ff7361]"
                 required
               ></textarea>
             </div>
             {/* Submit Button */}
             <div className="flex justify-end lg:col-span-2 mt-6">
-              <button className="btn text-white px-6 py-2 rounded-lg bg-[#ff7361] transition-all hover:bg-[#2f3239]">
+              <button className="btn border-none text-white px-6 py-2 rounded-lg bg-[#ff7361] transition-all hover:bg-[#2f3239]">
                 Add Recommendation
               </button>
             </div>
@@ -248,7 +248,7 @@ const QueryDetails = () => {
                       className="w-16 h-16 object-cover rounded-lg"
                     />
                     <div>
-                      <h3 className="font-bold text-lg">
+                      <h3 className="font-bold text-lg text-black">
                         {recommendation.recommendationTitle}
                       </h3>
                       <p className="text-sm text-gray-600">

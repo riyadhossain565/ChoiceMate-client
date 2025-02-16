@@ -6,10 +6,10 @@ const Discover = () => {
   return (
     <div>
       <div className="w-10/12 mx-auto py-16">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">
+        <h2 className="text-4xl font-bold text-center mb-8">
           Discover and Share Insights
         </h2>
-        <p className="text-center text-gray-500 mb-10">
+        <p className="text-center mb-10">
           Join our community to explore queries, share recommendations, and make
           informed decisions!
         </p>

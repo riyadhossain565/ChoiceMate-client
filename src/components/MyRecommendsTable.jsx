@@ -4,7 +4,7 @@ const MyRecommendsTable = ({ recommendation, mordernDelete, index }) => {
   const { _id, recommendationTitle, productName, currentDate } =
     recommendation || {};
   return (
-    <tr className="hover:bg-gray-50">
+    <tr className="hover:bg-gray-50 hover:text-black">
       <th>{index + 1}</th>
       <td>{recommendationTitle}</td>
       <td>{productName}</td>

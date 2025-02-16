@@ -43,7 +43,7 @@ const Queries = () => {
             aria-label="Enter Product Title"
           />
 
-          <button className="px-1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-[#ff7361] rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none">
+          <button className="px-1 md:px-4 py-3 ml-1 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-[#ff7361] rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none">
             Search
           </button>
         </div>
@@ -60,15 +60,6 @@ const Queries = () => {
         >
           <MdGrid4X4 className="w-6 h-6" />
         </button>
-        {/* <button
-          className={`btn ${
-            gridColumns === 2 ? "btn bg-[#ff7361]" : "btn-outline"
-          }`}
-          onClick={() => handleLayoutChange(2)}
-          title="column-2"
-        >
-          <CiGrid2V className="w-6 h-6" />
-        </button> */}
         <button
           className={`btn ${
             gridColumns === 3 ? "btn bg-[#ff7361]" : "btn-outline"

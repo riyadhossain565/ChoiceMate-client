@@ -42,7 +42,7 @@ const RecommendationsForMe = () => {
               <p className="text-xl">No recommendations found.</p>
             ) : (
               recommendations.map((recommendation, index) => (
-                <tr className="hover:bg-gray-50">
+                <tr className="hover:bg-gray-50 hover:text-black">
                   <th>{index + 1}</th>
                   <td>{recommendation.productName}</td>
                   <td>{recommendation.recommender?.email}</td>

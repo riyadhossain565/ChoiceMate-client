@@ -17,13 +17,13 @@ const MyQuery = ({ query, mordernDelete }) => {
       </figure>
       <div className="flex flex-col gap-1 items-center text-center">
         <h2 className="text-xl font-semibold my-2">{productName}</h2>
-        <p className="text-gray-600">
+        <p>
           <strong>Brand:</strong> {productBrand}
         </p>
-        <p className="text-gray-600">
+        <p>
           <strong>Query:</strong> {queryTitle}
         </p>
-        <p className="text-gray-600">
+        <p className="px-2">
           <strong>Reason:</strong> {avoidReason.substring(0, 70)}...
         </p>
         <div className="card-actions justify-center my-4">

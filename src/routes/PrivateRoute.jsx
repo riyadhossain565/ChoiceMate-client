@@ -9,10 +9,12 @@ const PrivateRoute = ({ children }) => {
 
   if (loading)
     return (
-      <span className="loading loading-ring w-24 block mx-auto my-10"></span>
+      <div className="py-24 text-center">
+        <span className="loading loading-ring w-24"></span>
+      </div>
     );
-    if(user) return children
-  return <Navigate to="/login" state={location.pathname}></Navigate>
+  if (user) return children;
+  return <Navigate to="/login" state={location.pathname}></Navigate>;
 };
 
 export default PrivateRoute;
