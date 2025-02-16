@@ -1,13 +1,15 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { LuGrid2X2X } from "react-icons/lu";
 import { MdGrid4X4 } from "react-icons/md";
 import QueryCard from "../components/QueryCard";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Queries = () => {
   const [queries, setQueries] = useState([]);
   const [gridColumns, setGridColumns] = useState(3);
   const [search, setSearch] = useState("");
+  const {loading} = useContext(AuthContext)
 
   useEffect(() => {
     const fetchAllQuery = async () => {
@@ -18,6 +20,13 @@ const Queries = () => {
     };
     fetchAllQuery();
   }, [search]);
+
+  if (loading)
+    return (
+      <div className="py-28 text-center">
+        <span className="loading loading-ring w-24"></span>
+      </div>
+    );
 
   const handleLayoutChange = (columns) => {
     setGridColumns(columns);
