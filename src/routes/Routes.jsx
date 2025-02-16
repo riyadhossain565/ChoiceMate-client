@@ -19,48 +19,68 @@ const router = createBrowserRouter([
     element: <MainLayouts />,
     errorElement: <ErrorPage />,
     children: [
-        {
-            path:'/',
-            element: <Home />
-        },
-        {
-            path:'/login',
-            element:<LogIn />
-        },
-        {
-            path: '/register',
-            element: <Register />
-        },
-        {
-          path: '/add-queries',
-          element: <PrivateRoute> <AddQueries /></PrivateRoute>
-        },
-        {
-          path: '/my-queries',
-          element: <PrivateRoute><MyQueries /></PrivateRoute>
-        },
-        {
-          path: '/queries',
-          element: <Queries />
-        },
-        {
-          path: '/query/:id',
-          element: <PrivateRoute><QueryDetails /></PrivateRoute>
-        },
-        {
-          path: '/update-query/:id',
-          element: <UpdateQueries />
-        },
-        {
-          path: '/my-recommendations',
-          element: <PrivateRoute><MyRecommendations /></PrivateRoute>
-        },
-        {
-          path: '/recommendations-for-me',
-          element: <PrivateRoute><RecommendationsForMe /></PrivateRoute>
-        }
-    ]
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/login",
+        element: <LogIn />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+      {
+        path: "/add-queries",
+        element: (
+          <PrivateRoute>
+            <AddQueries />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/my-queries",
+        element: (
+          <PrivateRoute>
+            <MyQueries />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/queries",
+        element: <Queries />,
+      },
+      {
+        path: "/query/:id",
+        element: (
+          <PrivateRoute>
+            <QueryDetails />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/update-query/:id",
+        element: <UpdateQueries />,
+      },
+      {
+        path: "/my-recommendations",
+        element: (
+          <PrivateRoute>
+            <MyRecommendations />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/recommendations-for-me",
+        element: (
+          <PrivateRoute>
+            <RecommendationsForMe />
+          </PrivateRoute>
+        ),
+      },
+    ],
   },
 ]);
 
-export default router
+export default router;
